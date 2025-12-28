@@ -1,0 +1,7 @@
+{
+	"InstallScripts" : 
+	[
+		"/home/trapplus/code/cpp/projects/sudoku-education/build/cmake_install.cmake"
+	],
+	"Parallel" : false
+}
