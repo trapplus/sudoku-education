@@ -13,4 +13,5 @@ add_executable(Sudoku
     src/Engine.cpp
     src/Game.cpp
     src/Validator.cpp
+    src/Statistics.cpp
 )
