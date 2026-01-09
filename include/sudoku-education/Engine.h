@@ -1,5 +1,6 @@
 #pragma once
 
+// forward declaration
 class Board;
 
 class Engine {

@@ -6,7 +6,6 @@
 class Game {
 public:
     Game();
-
     void run();
     void reset();
 
@@ -17,6 +16,7 @@ private:
     void processInput();
     void update();
     void render() const;
+    void loadPuzzle();
 
-    bool isRunning;
+    bool isRunning; // game status
 };
