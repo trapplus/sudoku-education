@@ -28,6 +28,7 @@ cmake --build build
 │       ├── Board.h
 │       ├── Engine.h
 │       ├── Game.h
+│       ├── Statistics.h
 │       └── Validator.h
 ├── LICENSE
 ├── README.md
@@ -36,6 +37,7 @@ cmake --build build
     ├── Engine.cpp
     ├── Game.cpp
     ├── main.cpp
+    ├── Statistics.cpp
     └── Validator.cpp
 ```
 
@@ -45,7 +47,7 @@ cmake --build build
 - **Engine** - логика решения
 - **Game** - игровой цикл
 - **Validator** - проверка правил
-- **Achivments** - рекорды, их запись, отслеживание, просмотр
+- **Achivments** - рекорды и статистика 
 
 ## Зависимости
 
@@ -53,6 +55,16 @@ cmake --build build
 - CMake 3.20+
 - Clang/GCC
 
+## TODO
+
+[*] Game - Логика игры
+
+[*] Engine - решение и управление, логика решения
+
+[*] Validator - Вынесеная логика валидации ячейки
+
+[ ] Statistic - Сбор статистики, отображение и храниение
+
 ## Лицензия
 
-MIT
+[GPL](LICENSE)
