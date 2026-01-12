@@ -4,9 +4,8 @@
 
 ## Что это?
 
-Классическое судоку 9x9 через backtracking.
+Классическое судоку 9x9.
 
----
 
 ## Установка зависимостей
 
@@ -33,7 +32,6 @@ choco install mingw
    
    - [MinGW](https://www.mingw-w64.org/downloads/)
 
----
 
 ### Linux
 
@@ -59,8 +57,6 @@ sudo dnf install gcc-c++ cmake json-devel
 
 brew install cmake nlohmann-json
 ```
-
----
 
 ## Компиляция
 
@@ -148,7 +144,7 @@ cmake --build build
 
 - [X] Validator - Вынесеная логика валидации ячейки
 
-- [ ] Statistic - Сбор статистики, отображение и храниение
+- [X] Statistic - Сбор статистики, отображение и храниение
 
 ## Лицензия
 
