@@ -2,6 +2,7 @@
 
 #include "Board.h"
 #include "Engine.h"
+#include "Statistics.h"
 
 class Game {
 public:
@@ -12,6 +13,7 @@ public:
 private:
     Board board;
     Engine engine;
+    Statistics stats;
 
     void processInput();
     void update();
