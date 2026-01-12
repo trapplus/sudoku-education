@@ -5,6 +5,7 @@
 #include <chrono>
 #include <fstream>
 #include <algorithm>
+#include <iostream>
 
 #include <nlohmann/json.hpp>
 
@@ -46,4 +47,5 @@ private:
     void loadFromFile();
     void saveToFile();
     void saveCurrentRecord();
+    std::string getCurrentDateTime() const;
 };
