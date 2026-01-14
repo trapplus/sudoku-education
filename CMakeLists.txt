@@ -16,6 +16,12 @@ add_executable(Sudoku
     src/Statistics.cpp
 )
 
+include(FetchContent)
+FetchContent_Declare(
+    nlohmann_json
+    URL https://github.com/nlohmann/json/releases/download/v3.11.3/json.tar.xz
+)
+FetchContent_MakeAvailable(nlohmann_json)
 
-find_package(nlohmann_json 3.11.3 REQUIRED)
-target_link_libraries(Sudoku nlohmann_json::nlohmann_json)
+target_link_libraries(sudoku PRIVATE nlohmann_json::nlohmann_json)
+
