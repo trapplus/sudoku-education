@@ -13,7 +13,7 @@
 
 ## Самостояятельная сборка
 
-### Windows
+### Windows - подготовка
 
 #### Вариант 1: Chocolatey (рекомендуется)
 ```powershell
@@ -37,7 +37,7 @@ choco install mingw
    - [MinGW](https://www.mingw-w64.org/downloads/)
 
 
-### Linux
+### Linux - подготовка
 
 #### Ubuntu/Debian
 ```bash
