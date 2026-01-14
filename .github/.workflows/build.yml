@@ -1,0 +1,66 @@
+name: Build binaries
+
+on:
+  push:
+    tags:
+      - "v*"
+
+jobs:
+  build-linux:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install deps
+        run: sudo apt-get update && sudo apt-get install -y cmake g++
+
+      - name: Configure
+        run: cmake -B build
+
+      - name: Build
+        run: cmake --build build --config Release
+
+      - name: Pack
+        run: |
+          mkdir out
+          cp build/sudoku out/sudoku-linux
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: linux-bin
+          path: out/*
+
+  build-windows:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Configure
+        run: cmake -B build -G "MinGW Makefiles"
+
+      - name: Build
+        run: cmake --build build --config Release
+
+      - name: Pack
+        run: |
+          mkdir out
+          copy build\sudoku.exe out\sudoku-windows.exe
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: windows-bin
+          path: out/*
+
+  release:
+    needs: [build-linux, build-windows]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/download-artifact@v4
+
+      - name: Create release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: |
+            linux-bin/*
+            windows-bin/*
+
