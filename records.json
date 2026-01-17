@@ -1,0 +1,18 @@
+{
+    "records": [
+        {
+            "autoSolved": true,
+            "date": "2026-01-14 09:46:10",
+            "errors": 0,
+            "moves": 0,
+            "timeSeconds": 0
+        },
+        {
+            "autoSolved": true,
+            "date": "2026-01-14 09:46:20",
+            "errors": 0,
+            "moves": 0,
+            "timeSeconds": 5
+        }
+    ]
+}
