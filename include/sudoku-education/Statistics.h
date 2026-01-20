@@ -13,6 +13,14 @@ using json = nlohmann::json;
 
 class Statistics {
 public:
+    struct GameRecord {
+        int timeSeconds;
+        int moves;
+        int errors;
+        std::string date;
+        bool autoSolved;
+    };
+
     Statistics();   // load json
     ~Statistics();  // save json
 
@@ -22,20 +30,14 @@ public:
     void recordError();
     void finishGame(bool autoSolved);
 
-    // show methods
-    void showRecords() const;
-    void showCurrentStats() const;
+    // getters for CLI
+    const std::vector<GameRecord>& getRecords() const;
     int getElapsedSeconds() const;
+    int getCurrentMoves() const;
+    int getCurrentErrors() const;
+    bool isCurrentlyTracking() const;
 
 private:
-    struct GameRecord {
-        int timeSeconds;
-        int moves;
-        int errors;
-        std::string date;
-        bool autoSolved;
-    };
-
     std::vector<GameRecord> records;  // records data
 
     // current game

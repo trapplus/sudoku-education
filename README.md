@@ -10,34 +10,7 @@
 
 [Скачать](https://github.com/trapplus/sudoku-education/releases/tag/v1.0) подходящий под вашу систему файл, и запустить его
 
-
-## Самостояятельная сборка
-
-### Windows - подготовка
-
-#### Вариант 1: Chocolatey (рекомендуется)
-```powershell
-# Установи Chocolatey если его нет - 
-https://chocolatey.org/install
-
-# Установи CMake
-choco install cmake
-
-# Установи Visual Studio Build Tools или MinGW
-choco install visualstudio2022buildtools
-# ИЛИ
-choco install mingw
-```
-
-#### Вариант 2: Вручную
-1. **CMake**: Скачайте [CMake]( https://cmake.org/download/)
-2. **Компилятор**:
-   - [Visual Studio]( https://visualstudio.microsoft.com/downloads/)
-   
-   - [MinGW](https://www.mingw-w64.org/downloads/)
-
-
-### Linux - подготовка
+### Linux
 
 #### Ubuntu/Debian
 ```bash

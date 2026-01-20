@@ -14,6 +14,7 @@ add_executable(Sudoku
     src/Game.cpp
     src/Validator.cpp
     src/Statistics.cpp
+    src/cli.cpp
 )
 
 include(FetchContent)
@@ -26,4 +27,3 @@ FetchContent_Declare(
 FetchContent_MakeAvailable(nlohmann_json)
 
 target_link_libraries(Sudoku PRIVATE nlohmann_json::nlohmann_json)
-

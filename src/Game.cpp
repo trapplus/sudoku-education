@@ -1,30 +1,23 @@
 #include "Game.h"
+#include "cli.h"
 
-// class init
 Game::Game() : isRunning(true) {
     board.clear();
     loadPuzzle();
     stats.startTracking();
 }
 
-// game mainloop
 void Game::run() {
-    std::cout << "=== Sudoku Game ===" << std::endl;
+    cli::printHeader("Sudoku Game");
     while (isRunning) {
         render();
         processInput();
     }
 }
 
-// player input proc
 void Game::processInput() {
-    std::cout <<"1 - сделать ход" << std::endl <<
-                "2 - решить судоку автоматически" << std::endl <<
-                "3 - отчистить доску" << std::endl <<
-                "4 - показать рекорды" << std::endl <<
-                "5 - текущая статистика" << std::endl <<
-                "0 - выход" << std::endl;
-    std::cout << "Введите команду: ";
+    cli::printMenu();
+    
     short command = 0;
     std::cin >> command;
 
@@ -32,22 +25,22 @@ void Game::processInput() {
         case 1: {
             int row, col, value;
             std::cin >> row >> col >> value;
-            // check move via engine
+            
             if (engine.isMoveValid(board, row, col, value)) {
                 engine.applyMove(board, row, col, value);
                 stats.recordMove();
-                std::cout << "Ход выполнен!" << std::endl;
+                cli::printMessage("Move applied!");
             } else {
                 stats.recordError();
-                std::cout << "Недопустимый ход!" << std::endl;
+                cli::printMessage("Invalid move!");
             }
             break;
         }
 
-        case 2: {  // auto play
+        case 2: {
             if (engine.solve(board)) {
                 stats.finishGame(true);
-                std::cout << "Судоку решено!" << std::endl;
+                cli::printMessage("Sudoku solved!");
             }
             break;
         }
@@ -56,32 +49,31 @@ void Game::processInput() {
             board.clear();
             loadPuzzle();
             stats.startTracking();
+            cli::printMessage("Board cleared!");
             break;
         }
 
         case 4: {
-            stats.showRecords();
+            cli::printRecords(stats);
             break;
         }
 
         case 5: {
-            stats.showCurrentStats();
+            cli::printCurrentStats(stats);
             break;
         }
 
-        case 0: { // exit
+        case 0: {
             isRunning = false;
             break;
         }
     }
 }
 
-// render
 void Game::render() const {
-    board.print();
+    cli::printBoard(board);
 }
 
-// board hard data. generate it, is so hard
 void Game::loadPuzzle() {
     int puzzle[9][9] = {
         {5, 3, 0, 0, 7, 0, 0, 0, 0},

@@ -3,6 +3,7 @@
 #include "Board.h"
 #include "Engine.h"
 #include "Statistics.h"
+#include "cli.h"
 
 class Game {
 public:
