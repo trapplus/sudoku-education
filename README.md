@@ -97,6 +97,7 @@ cmake --build build
     ├── main.cpp
     ├── Statistics.cpp
     └── Validator.cpp
+    
 ```
 
 ## Компоненты
