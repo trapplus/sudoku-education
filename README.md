@@ -80,25 +80,38 @@ cmake --build build
 ## Структура
 
 ```
+├── build
 ├── CMakeLists.txt
 ├── include
-│   └── sudoku-education
-│       ├── Board.h
-│       ├── Engine.h
-│       ├── Game.h
-│       ├── Statistics.h
-│       └── Validator.h
+│   └── sudoku-education
+│       ├── Board.h
+│       ├── cli.h
+│       ├── Engine.h
+│       ├── Game.h
+│       ├── Statistics.h
+│       └── Validator.h
 ├── LICENSE
 ├── README.md
+├── records.json
 └── src
     ├── Board.cpp
+    ├── cli.cpp
     ├── Engine.cpp
     ├── Game.cpp
     ├── main.cpp
     ├── Statistics.cpp
     └── Validator.cpp
-    
 ```
+
+## Компоненты
+
+- **Board** - игровое поле
+- **Engine** - логика решения
+- **Game** - игровой цикл
+- **Validator** - проверка правил
+- **cli** - отображение в консоли
+- **Statistics** - рекорды и статистика 
+
 
 ## Компоненты
 
